@@ -33,9 +33,10 @@ class DeviceKitTests: XCTestCase {
     let chip = Device.CPU.a20Pro
     XCTAssertEqual(chip.description, "A20 Pro")
     // The deferred model and unverified identifiers must remain unknown.
-    for identifier in ["iPhone19,1", "iPhone19,4", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
+    for identifier in ["iPhone19,1", "iPhone19,5", "iPhone19,6", "placeholder:iPhone18Pro", "placeholder:iPhone18ProMax"] {
       XCTAssertEqual(Device.mapToDevice(identifier: identifier), .unknown(identifier))
     }
+    XCTAssertEqual(Device.mapToDevice(identifier: "iPhone19,4"), .iPhoneDuo)
     #else
     let models: [ExpectedDevice] = [
       ExpectedDevice(model: .appleWatchSeries12_42mm, identifiers: ["Watch8,2", "Watch8,4"], diagonal: 1.79, ratio: (374, 446), ppi: 326),
@@ -646,6 +647,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
+      .iPhoneDuo,
       .iPad10,
       .iPadA16,
       .iPadAir5,
@@ -824,6 +826,7 @@ class DeviceKitTests: XCTestCase {
       .iPhone18ProMax,
       .iPhoneAir,
       .iPhone17e,
+      .iPhoneDuo,
       .iPad10,
       .iPadA16,
       .iPadAir4,

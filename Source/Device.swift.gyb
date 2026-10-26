@@ -284,6 +284,13 @@ iPhones = [
                 hasDynamicIsland=True, cameras=123, hasLidarSensor=True, hasUSBCConnectivity=True,
                 has5gSupport=True,
                 hasEsimSupport=True, hasDualEsimSupport=True),
+
+            # Identifier: iPhone19,4, as reported by devices in the field (2026-10-26).
+            # Diagonal, resolution and PPI describe the inner folding display. eSIM support is unverified.
+            Device("iPhoneDuo", "Device is an [iPhone Duo](https://support.apple.com/en-us/148588)", "", ["iPhone19,4"], 7.6, (1878, 2670), "iPhone Duo", "iPhone Duo", 430,
+                cpu="a20Pro", isXSeries=True, hasTouchID=True,
+                supportsWirelessCharging=True, hasRoundedDisplayCorners=True,
+                cameras=13, hasUSBCConnectivity=True, has5gSupport=True),
           ]
 
 iPads = [
